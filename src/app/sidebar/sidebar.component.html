@@ -1,0 +1,108 @@
+<div id="sidebar" class="nav-side-menu py-4">
+    <!-- <div class="btn-group btn-group-sm d-flex justify-content-between" role="group" aria-label="Filter">
+        <button type="button" class="btn btn-danger">All Posts</button>
+        <button type="button" class="btn btn-outline-danger">My Posts</button>
+    </div> -->
+    <div class="btn-group btn-group-toggle btn-group-sm d-flex justify-content-between" data-bs-toggle="buttons">
+        <label class="btn btn-primary">
+            <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off"> All Posts
+        </label>
+        <label class="btn btn-primary">
+            <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off"> My Posts
+        </label>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-between">
+        <button type="button" class="btn btn-sm btn-light px-2 disabled"><b> Filters </b></button>
+        <!-- <label> <b> Filters </b> </label> -->
+        <button type="button" class="btn btn-sm btn-outline-primary px-2" (click)="clearAllFilters()">Clear
+            Filters</button>
+    </div>
+
+    <div class="menu-list">
+        <ul id="menu-content" class="menu-content">
+
+            <li data-bs-toggle="collapse" data-bs-target="#language" class="collapsed text-secondary"
+                (click)="langFilterMenuOpen = !langFilterMenuOpen">
+                <span [hidden]="!langFilterMenuOpen" class="bi bi-caret-down-fill"></span>
+                    <span [hidden]="langFilterMenuOpen" class="bi bi-caret-right-fill"></span> Language
+            </li>
+            <ul class="sub-menu collapse" id="language">
+                <li class="d-flex justify-content-between px-3" (click)="changeFilter('language', 'java')" 
+                    [ngClass]="{'selected-filter': filters.language.includes('java')}"> <small>Java</small> <small
+                        class="text-muted">100k</small></li>
+                <li class="d-flex justify-content-between px-3" (click)="changeFilter('language', 'spring')" 
+                    [ngClass]="{'selected-filter': filters.language.includes('spring')}"> <small>Spring</small> <small
+                        class="text-muted">100k</small></li>
+                <li class="d-flex justify-content-between px-3" (click)="changeFilter('language', 'angular')" 
+                    [ngClass]="{'selected-filter': filters.language.includes('angular')}"> <small>Angular</small> <small
+                        class="text-muted">100k</small></li>
+                <li class="d-flex justify-content-between px-3" (click)="changeFilter('language', 'aws')" 
+                    [ngClass]="{'selected-filter': filters.language.includes('aws')}"> <small>AWS</small> <small
+                        class="text-muted">100k</small></li>
+                <li class="d-flex justify-content-between px-3" (click)="changeFilter('language', 'javascript')" 
+                    [ngClass]="{'selected-filter': filters.language.includes('javascript')}"> <small>Javascript</small>
+                    <small class="text-muted">100k</small></li>
+            </ul>
+
+            <li data-bs-toggle="collapse" data-bs-target="#resolution" aria-expanded="false" aria-controls="resolution"
+                (click)="resFilterMenuOpen = !resFilterMenuOpen">
+                <span [hidden]="!resFilterMenuOpen" class="bi bi-caret-down-fill"></span>
+                    <span [hidden]="resFilterMenuOpen" class="bi bi-caret-right-fill"></span> Resolution 
+            </li>
+            <ul class="sub-menu collapse" id="resolution">
+                <li class="d-flex justify-content-between px-3" (click)="changeFilter('resolution', 'resolved')"
+                    [ngClass]="{'selected-filter': filters.resolution.includes('resolved')}"> <small>Resolved</small>
+                    <small class="text-muted">100k</small></li>
+                <li class="d-flex justify-content-between px-3" (click)="changeFilter('resolution', 'answered')"
+                    [ngClass]="{'selected-filter': filters.resolution.includes('answered')}"> <small>Answered</small>
+                    <small class="text-muted">10k</small></li>
+                <li class="d-flex justify-content-between px-3" (click)="changeFilter('resolution', 'duplicate')"
+                    [ngClass]="{'selected-filter': filters.resolution.includes('duplicate')}"> <small>Duplicate</small>
+                    <small class="text-muted">7k</small></li>
+                <li class="d-flex justify-content-between px-3" (click)="changeFilter('resolution', 'invalid')"
+                    [ngClass]="{'selected-filter': filters.resolution.includes('invalid')}"> <small>Invalid</small>
+                    <small class="text-muted">0.4k</small></li>
+            </ul>
+
+            <li data-bs-toggle="collapse" data-bs-target="#tag" class="collapsed"
+                (click)="tagFilterMenuOpen = !tagFilterMenuOpen">
+                <span [hidden]="!tagFilterMenuOpen" class="bi bi-caret-down-fill"></span>
+                    <span [hidden]="tagFilterMenuOpen" class="bi bi-caret-right-fill"></span> Tag 
+            </li>
+            <ul class="sub-menu collapse" id="tag">
+                <li class="px-3"><input type="text" class="form-control form-control-sm"></li>
+                <li class="d-flex justify-content-between px-3" (click)="changeFilter('tag', 'tag1')"
+                    [ngClass]="{'selected-filter': filters.tag.includes('tag1')}"> <small>Tag 1</small> <small
+                        class="text-muted">100k</small></li>
+                <li class="d-flex justify-content-between px-3" (click)="changeFilter('tag', 'tag2')"
+                    [ngClass]="{'selected-filter': filters.tag.includes('tag2')}"> <small>Tag 2</small> <small
+                        class="text-muted">10k</small></li>
+                <li class="d-flex justify-content-between px-3" (click)="changeFilter('tag', 'tag3')"
+                    [ngClass]="{'selected-filter': filters.tag.includes('tag3')}"> <small>Tag 3</small> <small
+                        class="text-muted">7k</small></li>
+                <li class="d-flex justify-content-between px-3" (click)="changeFilter('tag', 'tag4')"
+                    [ngClass]="{'selected-filter': filters.tag.includes('tag4')}"> <small>Tag 4</small> <small
+                        class="text-muted">0.4k</small></li>
+            </ul>
+
+            <li data-bs-toggle="collapse" data-bs-target="#type" aria-expanded="false" aria-controls="type"
+                (click)="typeFilterMenuOpen = !typeFilterMenuOpen">
+                <span [hidden]="!typeFilterMenuOpen" class="bi bi-caret-down-fill"></span>
+                    <span [hidden]="typeFilterMenuOpen" class="bi bi-caret-right-fill"></span> Type 
+            </li>
+            <ul class="sub-menu collapse" id="type">
+                <li class="d-flex justify-content-between px-3" (click)="changeFilter('type', 'issue')"
+                    [ngClass]="{'selected-filter': filters.type.includes('issue')}"> <small>Issue</small> <small
+                        class="text-muted">100k</small></li>
+                <li class="d-flex justify-content-between px-3" (click)="changeFilter('type', 'article')"
+                    [ngClass]="{'selected-filter': filters.type.includes('article')}"> <small>Article</small> <small
+                        class="text-muted">10k</small></li>
+                <li class="d-flex justify-content-between px-3" (click)="changeFilter('type', 'howto')"
+                    [ngClass]="{'selected-filter': filters.type.includes('howto')}"> <small>How to</small> <small
+                        class="text-muted">7k</small></li>
+            </ul>
+
+        </ul>
+    </div>
+</div>

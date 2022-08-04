@@ -1,0 +1,87 @@
+<div #signinModal class="modal fade" id="signinModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="signinModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="card">
+        <div class="row g-0">
+          <div class="col-6 bg-primary bg-gradient d-flex align-items-center">
+            <figure class="text-center text-white mx-auto px-4">
+              <blockquote class="blockquote">
+                <p>“Anyone who stops learning is old, whether at twenty or eighty. Anyone who keeps learning stays young.”</p>
+              </blockquote>
+              <figcaption class="blockquote-footer text-white">
+                 <cite>Henry Ford</cite>
+              </figcaption>
+            </figure>
+            <!-- 
+            <h1 class=" display-4 text-white mx-auto px-4">
+              Continuous Learning <span style="white-space: pre;">Continuous Growth</span>
+            </h1> -->
+          </div>
+          <div class="col-6">
+            <div class="card-body py-4 bg-light">
+              <div>
+                <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Close"
+                  #closeSigninModal></button>
+              </div>
+              <div>
+                <p class="modal-title h2" id="signinModalLabel">Sign in</p>
+              </div>
+              <div class="modal-body px-4">
+                <form [formGroup]="signinForm" (ngSubmit)="checkSignin()">
+                  <div *ngIf="error" class="alert alert-danger alert-dismissible d-flex align-items-center mb-4">
+                    {{error}}</div>
+                  <div class="form-group mb-4">
+                    <label>Email <sup class="text-danger">*</sup> </label>
+                    <input type="email" formControlName="email" class="form-control" placeholder="Ex. sandy@example.com"
+                      [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                      <div *ngIf="f.email.errors.required">Email is <strong>required.</strong></div>
+                      <div *ngIf="f.email.hasError('email') && !f.email.hasError('required')">
+                        Please enter a valid email address.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group mb-4">
+                    <label for="password">Password <sup class="text-danger">*</sup></label>
+                    <input type="password" formControlName="password" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                      <div *ngIf="f.password.errors.required">Password is required</div>
+                      <div *ngIf="f.password.hasError('minlength') && !f.password.hasError('required')">
+                        Password must be at least 4 characters
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-4 d-flex justify-content-between">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" formControlName="rememberMe">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        Remember Me
+                      </label>
+                    </div>
+                    <div style="float: right;">
+                      <a href="" class="link-secondary">Forgot your password?</a>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <button class="btn btn-secondary w-100" type="submit"
+                      [disabled]="!signinForm.valid && loading">
+                      <!-- <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span> -->
+                      Sign In
+                    </button>
+                  </div>
+                  <div class="text-center mb-4">Not a member?<a href="" class="link-secondary" data-bs-toggle="modal"
+                      data-bs-target="#signupModal"> Sign up </a>
+                  </div>
+        
+                </form>
+        
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

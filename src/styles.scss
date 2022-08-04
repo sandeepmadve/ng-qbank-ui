@@ -1,0 +1,272 @@
+/* You can add global styles to this file, and also import other style files */
+/*
+https://hookagency.com/blog/website-color-schemes/
+Dark Blue: #12232E
+Lighter Blue: #007CC7
+Lightest Blue: #4DA8DA
+Shadow of Dark Blue: #203647
+Shadow of Light Blue: #EEFBFB
+
+https://visme.co/blog/website-color-schemes/  
+Clean and Modern
+#17252a
+#2b7a78
+#3aafa9
+#def2f1
+#feffff
+
+https://hookagency.com/blog/website-color-schemes/
+Blackish: #202020
+Dark Grey: #3F3F3F
+Medium Grey: #707070
+Egg Yellow: #FFDF6C
+White: #FFFFFF
+
+*/
+$primary: #ff6666;//#242e4c;
+$secondary: #1a4a4c;//#1c2540;
+$tertiary: #87bcca;//#1d58a5;
+// $info: #0d6efd;
+$success: #3aaf85;
+$warning: #ffc107;
+$dark: #1c2540;
+$gray:#1f2937;
+// $light: #ffffff
+// $white: #ffffff
+$danger: #dc3545;
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+:root {
+  --blackish: #202020;
+  --dark-grey: #3f3f3f;
+  --medium-grey: #707070;
+  --egg-yellow: #ffdf6c;
+
+  --primary-text: #ffffff;
+  --secondary-text: #aaaaaa;
+  --background: #181818;
+  --menu: #212121;
+  --hover: #3d3d3d;
+
+  --bs-danger: #dc3546;
+  --bs-warning: #ffbd07;
+  --bs-success: #28a746;
+  --bs-info: #17a3b8;
+  --bs-primary: #007bff;
+
+  --color-secondary: #1a4a4c;
+  --color-tertiary: #87bcca;
+}
+
+// @import "./assets/plugins/uikit-3.7.2/css/uikit-custom.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), url(./assets/fonts/Roboto/Roboto-Light.ttf) format("truetype");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Roboto-Thin";
+  src: local("Roboto"), url(./assets/fonts/Roboto/Roboto-Thin.ttf) format("truetype");
+  font-weight: lighter;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Regular";
+  src: local("Roboto"), url(./assets/fonts/Roboto/Roboto-Regular.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  src: local("Roboto"), url(./assets/fonts/Roboto/Roboto-Bold.ttf) format("truetype");
+}
+
+* {
+  // border-radius: 1px !important;
+}
+
+body {
+  // background-color: #444444;
+  // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23000000' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%2351554F'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");
+
+  // background-image: url("./assets/images/bg3.png");
+  // background-repeat: repeat;
+  // background-size: 10%;
+  background-color: #f5f5f5 !important;
+  min-height: 700px;
+  font-family: "Roboto" !important;
+}
+
+body > b {
+  font-family: "Roboto-Bold" !important;
+}
+
+.navbar-light .navbar-brand {
+  color: white !important;
+}
+
+.navbar {
+  background: var(--color-tertiary);
+  padding: 0px;
+}
+
+.bi {
+  // color: var(--one-blue);
+}
+
+.list-group-item.active {
+  z-index: 2;
+  color: var(--blackish) !important;
+  background-color: var(--one-blue) !important;
+  border-color: var(--one-blue) !important;
+}
+
+.btn-close-modal {
+  float: right;
+  padding: 20px;
+}
+
+// .btn-form-action-modal{
+//   width: 100%;
+//   background-color: var(--one-blue);
+// }
+
+// .btn-form-action-modal:hover{
+//   border: 1px solid var(--medium-grey);
+//   font-weight: 500;
+// }
+
+
+// a {
+//   border-bottom: .1em solid var(--one-blue);
+//   text-decoration: none;
+// }
+
+// a:hover {
+//   text-decoration: none;
+//   color: var(--blackish);
+//   font-weight: 500;
+// }
+
+// a {
+//   text-decoration: none;
+// }
+
+// a:hover {
+//   text-decoration: none;
+// }
+
+// a {
+//   text-decoration: none;
+//   position: relative;
+// }
+
+// a:after {
+//   border-radius: 1em;
+//   border-top: .1em solid var(--one-blue);
+//   content: "";
+//   position: absolute;
+//     right: 100%;
+//     bottom: .14em;
+//     left: 0;
+//   transition: right .4s cubic-bezier(0,.5,0,1);
+// }
+
+// a:hover:after {
+//   right: 0;
+// }
+
+.form-control:focus {
+  box-shadow: 0 0 0 1px var(--one-blue);
+  background-color: #f1f1f1;
+}
+
+.form-check-input:checked {
+  background-color: var(--one-blue);
+  border-color: var(--one-blue);
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 1px var(--one-blue);
+}
+
+// .border-left-blue{
+//   border-left: 2px solid var(--one-blue-dark);
+// }
+
+.qb-border-top {
+  // border-top: solid 2px var(--color-p1);
+}
+.qb-border-left {
+  // border-left: solid 2px var(--color-p1);
+}
+.qb-shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 1px 3px rgba(0, 0, 0, 0.23);
+}
+
+// ::-webkit-scrollbar {
+//   width: 12px;
+// }
+
+// ::-webkit-scrollbar-track {
+//   -webkit-box-shadow: inset 0 0 4px #151618;
+//   border-radius: 2px;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   border-radius: 2px;
+//   -webkit-box-shadow: inset 0 0 4px #414141;
+// }
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+//++++++++++++++++++++++++++++++++++++++++++//
+.xq-border-right {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header.title {
+  margin-left: -12px;
+  margin-right: -12px;
+  position: relative;
+}
+
+.app-color-bg {
+  background: linear-gradient(
+    to right,
+    var(--bs-danger),
+    var(--bs-warning),
+    var(--bs-success),
+    var(--bs-info),
+    var(--bs-primary)
+  );
+}
+
+.btn:hover {
+  cursor: default;
+  color: white !important;
+}
+
+// .app-color-border{
+//   border: linear-gradient(90deg,var(--bs-danger),var(--bs-warning),var(--bs-success),var(--bs-info),var(--bs-primary));
+// }
+
+// .app-color-border-bottom{
+//   background: linear-gradient(to right,var(--bs-danger),var(--bs-warning),var(--bs-success),var(--bs-info),var(--bs-primary));
+// }
+
+/* Importing Bootstrap SCSS file. */
+@import "../node_modules/bootstrap/scss/bootstrap";
+.bg-tertiary{
+  background: var(--color-tertiary);
+}
+
+.form-control:focus {
+  border-color: var(--color-secondary);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 2px var(--color-tertiary);;
+}

@@ -1,0 +1,54 @@
+.qb-toolbar {
+  background-color: var(--blackish) !important;
+  color: var(--one-blue) !important;
+}
+
+// .form-control:focus {
+//   border-color: var(--one-blue);
+//   box-shadow: 0 0 0 0.1rem rgba(240, 216, 80, 0.755);
+// }
+
+.navbar-search-input {
+  // border: none;
+  // background-color: white;
+}
+
+.navbar-search-input :focus {
+  outline: none;
+}
+
+.bi-search .bi-list .bi-person {
+  color: var(--one-blue);
+  background-color: var(--dark-grey) !important;
+}
+
+.input-group-text {
+  background-color: white;
+  // border: 1px solid silver;
+  // border-right: none;
+}
+
+.app-logo{
+  color: #fff;
+  // font-size: 50px;
+  font-weight: bold;
+  font-family: monospace;
+  letter-spacing: 5px;
+  cursor: pointer
+}
+.app-logo span{
+  transition: .5s linear
+}
+.app-logo:hover span:nth-child(1){
+  margin-right: 2px
+}
+.app-logo:hover span:nth-child(1):after{
+  content: "'";
+}
+.app-logo:hover span:nth-child(2){
+  margin-left: 10px
+}
+.app-logo:hover span{
+  color: #fff;
+  text-shadow: 0 0 5px var(--color-secondary);
+}

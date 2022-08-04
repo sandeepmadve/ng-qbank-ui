@@ -1,0 +1,39 @@
+.qb-qlist {
+  border-right: 1px solid #feffff !important;
+}
+
+.qb-qlist-item {
+  background-color: var(--primary-light) !important;
+  border-bottom: 1px solid #feffff !important;
+}
+
+// dl {
+//   background-color: #feffff;
+//   text-align: left;
+// }
+
+// dl > ul > li > div > dt {
+//   color: black;
+//   font-weight: bold;
+// }
+
+// dl > ul > li > div > dd {
+//   color: black;
+// }
+
+.q-list > ul {
+  color: black;
+  text-align: left;
+}
+
+.q-list > ul > li {
+  border-bottom: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5;
+}
+
+.q-list > ul > li:hover {
+  background-color: rgb(228, 228, 228);
+}
+.q-list > ul > li:active {
+  background-color: rgb(228, 228, 228);
+}
